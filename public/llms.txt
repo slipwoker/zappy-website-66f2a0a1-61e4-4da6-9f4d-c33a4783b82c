@@ -1,47 +1,60 @@
-# Business — Generative Engine Optimization Map
+# PawsAcademy — Generative Engine Optimization Map
+
+> A חינוך ואילוף בעלי חיים business.
 
 ---
 
 ## Pages
 
 ### Home
-https://example.com
+https://pawsacademy.zappy5.app
 אקדמיה מובילה לאילוף כלבים בשיטות תגמול חיובי. מאלפים מוסמכים עם 15+ שנות ניסיון. אילוף גורים, תיקון התנהגות, קורסים מתקדמים ועוד. התחל את מסע האילוף היום!
 
 ### Services
-https://example.com/services
+https://pawsacademy.zappy5.app/services
 מגוון שירותי אילוף כלבים: אילוף גורים, ציות בסיסי, תיקון התנהגות, אילוף מתקדם ואילוף פרטי בבית. תוכניות מותאמות אישית בשיטות תגמול חיובי. קבע פגישת ייעוץ חינם!
 
 ### About
-https://example.com/about
+https://pawsacademy.zappy5.app/about
 הכירו את הסיפור מאחורי PawsAcademy - מייסדת עם חזון, צוות מאלפים מוסמכים ושיטת אילוף מבוססת מדע ותגמול חיובי. 15 שנות ניסיון, 850+ כלבים מאולפים בהצלחה ו-98% שביעות רצון.
 
 ### Contact
-https://example.com/contact
+https://pawsacademy.zappy5.app/contact
 צרו קשר עם PawsAcademy לפגישת ייעוץ חינמית. טלפון: [business_phone], אימייל: [business_email]. נשמח לענות על כל שאלה ולעזור לכם למצוא את הקורס המתאים לכלב שלכם.
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://pawsacademy.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://pawsacademy.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://pawsacademy.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About PawsAcademy
+PawsAcademy is a business in the חינוך ואילוף בעלי חיים industry.
+
+## Target Audience
+- בעלי כלבים עם גורים חדשים
+- אנשי מקצוע עסוקים עם חיות מחמד
+- חובבי חיות ללא ילדים
+- הורים עם ילדים וחיות מחמד
+
+## Industry
+חינוך ואילוף בעלי חיים
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+- **Sitemap**: https://pawsacademy.zappy5.app/sitemap.xml
+- **Robots.txt**: https://pawsacademy.zappy5.app/robots.txt
