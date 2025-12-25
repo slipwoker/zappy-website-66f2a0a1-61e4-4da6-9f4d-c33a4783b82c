@@ -1,0 +1,730 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>השירותים שלנו - תוכניות אילוף מקצועיות | PawsAcademy</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&amp;display=swap" rel="stylesheet">
+    <meta name="keywords" content="בית ספר לאילוף, בית ספר לאילוף כלבים, אילוף גורים בישראל">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512x512.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<style>
+/* Zappy Attribution Header Styles */
+.zappy-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 19px 0px rgba(0,0,0,0.04);
+  padding: 16px 10px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 21px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 21px;
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+    .zappy-header p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: baseline;
+      margin-bottom: 0 !important;
+      direction: ltr !important;
+    }
+
+.zappy-header .zappy-link {
+  font-weight: 700;
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.zappy-header .zappy-link:hover {
+  opacity: 0.7;
+}</style>
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
+    <!-- Mickidum Accessibility Toolbar -->
+    <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+<!-- Zappy Analytics -->
+<script>
+(function() {
+  'use strict';
+  
+  // Configuration
+  var config = {
+    websiteId: '66f2a0a1-61e4-4da6-9f4d-c33a4783b82c',
+    apiUrl: 'http://localhost:5001/api/analytics/track',
+    sessionDuration: 30 * 60 * 1000, // 30 minutes
+    visitorDuration: 30 * 24 * 60 * 60 * 1000, // 30 days
+    trackPageViews: true,
+    trackClicks: true,
+    trackFormSubmissions: true
+  };
+  
+  // Generate or retrieve persistent visitor ID (30 days)
+  function getVisitorId() {
+    var visitorKey = 'zappy_visitor_' + config.websiteId;
+    var visitor = null;
+    
+    try {
+      visitor = localStorage.getItem(visitorKey);
+      if (visitor) {
+        var visitorData = JSON.parse(visitor);
+        var now = Date.now();
+        
+        // Check if visitor ID is still valid (30 days)
+        if (now - visitorData.created < config.visitorDuration) {
+          // Update last seen timestamp
+          visitorData.lastSeen = now;
+          localStorage.setItem(visitorKey, JSON.stringify(visitorData));
+          return visitorData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: LocalStorage not available');
+    }
+    
+    // Generate new visitor ID
+    var newVisitorId = 'zv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      localStorage.setItem(visitorKey, JSON.stringify({
+        id: newVisitorId,
+        created: Date.now(),
+        lastSeen: Date.now()
+      }));
+    } catch (e) {
+      // Continue without local storage
+    }
+    
+    return newVisitorId;
+  }
+  
+  // Generate or retrieve session ID (30 minutes)
+  function getSessionId() {
+    var sessionKey = 'zappy_session_' + config.websiteId;
+    var session = null;
+    
+    try {
+      session = sessionStorage.getItem(sessionKey);
+      if (session) {
+        var sessionData = JSON.parse(session);
+        var now = Date.now();
+        
+        // Check if session is still valid
+        if (now - sessionData.timestamp < config.sessionDuration) {
+          // Update timestamp
+          sessionData.timestamp = now;
+          sessionStorage.setItem(sessionKey, JSON.stringify(sessionData));
+          return sessionData.id;
+        }
+      }
+    } catch (e) {
+      console.warn('Zappy Analytics: SessionStorage not available');
+    }
+    
+    // Generate new session ID
+    var newSessionId = 'zs_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    
+    try {
+      sessionStorage.setItem(sessionKey, JSON.stringify({
+        id: newSessionId,
+        timestamp: Date.now()
+      }));
+    } catch (e) {
+      // Continue without session storage
+    }
+    
+    return newSessionId;
+  }
+  
+  var visitorId = getVisitorId();
+  var sessionId = getSessionId();
+  
+  // Track an event
+  function trackEvent(eventType, data) {
+    data = data || {};
+    
+    var eventData = {
+      website_id: config.websiteId,
+      event_type: eventType,
+      page_path: window.location.pathname,
+      referrer: document.referrer || 'direct',
+      visitor_id: visitorId,
+      session_id: sessionId,
+      metadata: data
+    };
+    
+    // Use sendBeacon if available (better for page unload events)
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(eventData)], { type: 'application/json' });
+      navigator.sendBeacon(config.apiUrl, blob);
+    } else {
+      // Fallback to fetch
+      fetch(config.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventData),
+        keepalive: true
+      }).catch(function(error) {
+        console.warn('Zappy Analytics: Failed to track event', error);
+      });
+    }
+  }
+  
+  // Track page view
+  if (config.trackPageViews) {
+    trackEvent('pageview', {
+      title: document.title,
+      url: window.location.href
+    });
+  }
+  
+  // Track clicks on important elements
+  if (config.trackClicks) {
+    document.addEventListener('click', function(e) {
+      var target = e.target;
+      
+      // Track button clicks (counted as actions)
+      if (target.tagName === 'BUTTON' || target.closest('button')) {
+        var button = target.tagName === 'BUTTON' ? target : target.closest('button');
+        trackEvent('click', {
+          element: 'button',
+          text: button.textContent.trim().substring(0, 100),
+          id: button.id || null,
+          class: button.className || null
+        });
+      }
+      
+      // Track link clicks (navigation - not counted as actions)
+      else if (target.tagName === 'A' || target.closest('a')) {
+        var link = target.tagName === 'A' ? target : target.closest('a');
+        trackEvent('navigation', {
+          element: 'link',
+          text: link.textContent.trim().substring(0, 100),
+          href: link.href,
+          external: link.hostname !== window.location.hostname
+        });
+      }
+    }, true);
+  }
+  
+  // Track form submissions
+  if (config.trackFormSubmissions) {
+    document.addEventListener('submit', function(e) {
+      var form = e.target;
+      
+      trackEvent('form_submit', {
+        form_id: form.id || null,
+        form_name: form.name || null,
+        form_action: form.action || null,
+        form_method: form.method || 'GET'
+      });
+    }, true);
+  }
+  
+  // Track time on page (send on page unload)
+  var pageLoadTime = Date.now();
+  
+  window.addEventListener('beforeunload', function() {
+    var timeOnPage = Math.floor((Date.now() - pageLoadTime) / 1000); // in seconds
+    
+    trackEvent('page_unload', {
+      time_on_page: timeOnPage,
+      page_path: window.location.pathname
+    });
+  });
+  
+  // Expose tracking function globally for custom events
+  window.zappyAnalytics = {
+    track: trackEvent,
+    getVisitorId: function() { return visitorId; },
+    getSessionId: function() { return sessionId; }
+  };
+  
+})();
+</script>
+<!-- End Zappy Analytics -->
+
+    <style id="zappy-mobile-submenu-styles">
+      /* Mobile submenu accordion styles */
+      @media (max-width: 768px) {
+        .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu {
+          position: static !important;
+          transform: none !important;
+          box-shadow: none !important;
+          background: transparent !important;
+          margin-top: 0 !important;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          visibility: hidden;
+          transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+          padding: 0 !important;
+          border-radius: 0 !important;
+        }
+        .sub-menu.mobile-expanded {
+          max-height: 500px !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          padding: 8px 0 8px 16px !important;
+        }
+        [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded, html[lang="ar"] .sub-menu.mobile-expanded {
+          padding: 8px 16px 8px 0 !important;
+        }
+        .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu {
+          opacity: 0; visibility: hidden; pointer-events: none;
+        }
+        .nav-menu li > .sub-menu.mobile-expanded, nav li > .sub-menu.mobile-expanded, .navbar li > .sub-menu.mobile-expanded, #navMenu li > .sub-menu.mobile-expanded {
+          opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+        }
+        .nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu) {
+          display: flex !important; flex-wrap: wrap !important; align-items: center !important;
+        }
+        .nav-menu li:has(.sub-menu) > a, nav li:has(.sub-menu) > a, .navbar li:has(.sub-menu) > a, #navMenu li:has(.sub-menu) > a {
+          flex: 1 !important;
+        }
+        .mobile-submenu-toggle {
+          display: flex !important; align-items: center !important; justify-content: center !important;
+          width: 44px !important; height: 44px !important; background: transparent !important;
+          border: none !important; cursor: pointer !important; padding: 0 !important; margin: 0 !important;
+          flex-shrink: 0 !important; -webkit-tap-highlight-color: transparent;
+        }
+        .mobile-submenu-toggle::after {
+          content: '' !important; display: block !important; width: 0 !important; height: 0 !important;
+          border-left: 6px solid transparent !important; border-right: 6px solid transparent !important;
+          border-top: 7px solid currentColor !important; transition: transform 0.3s ease !important;
+        }
+        .mobile-submenu-toggle.expanded::after { transform: rotate(180deg) !important; }
+        .nav-menu li:has(.sub-menu) > .sub-menu, nav li:has(.sub-menu) > .sub-menu, .navbar li:has(.sub-menu) > .sub-menu, #navMenu li:has(.sub-menu) > .sub-menu {
+          flex-basis: 100% !important; width: 100% !important;
+        }
+        .sub-menu a { padding: 10px 0 !important; display: block !important; font-size: 14px !important; }
+        .sub-menu a:hover { background-color: transparent !important; }
+      }
+      @media (min-width: 769px) { .mobile-submenu-toggle { display: none !important; } }
+    </style>
+    <link rel="stylesheet" href="/styles.css">
+</head><body>
+
+<!-- Zappy Attribution Header -->
+<div id="zappy-attribution-header" class="zappy-header" style="display: none;">
+  <p>Happily created by&nbsp;<a href="https://zappy5.com" target="_blank" rel="noopener noreferrer" class="zappy-link">Zappy</a></p>
+</div><nav class="navbar"><button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg><svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg></button><button class="phone-header-btn" aria-label="Call"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></button><div class="nav-container"><div class="nav-right-group"><div class="nav-brand"><a href="/" class="logo-link" aria-label="Home"><img class="logo" src="/assets/business-logo.webp" alt="PawsAcademy"></a></div><ul class="nav-menu" id="navMenu"><li><a href="/services" class="nav-link active">שירותים</a></li><li><a href="/about" class="nav-link">אודות</a></li><li class="mobile-contact-link"><a href="/contact" class="nav-link nav-link-cta">צור קשר</a></li></ul></div><div class="nav-cta-container">
+          <li class="nav-cta-item">
+            <a href="/contact" class="nav-cta-btn">צור קשר</a>
+          </li>
+        </div></div></nav><main><section class="page-hero"><div class="container"><div class="page-hero-content"><span class="section-label">השירותים שלנו</span><h1>בית ספר לאילוף - תוכניות אילוף מקצועיות לכלבים</h1><p>בית ספר לאילוף PawsAcademy מציע מגוון רחב של שירותי אילוף כלבים מקצועיים המותאמים לצרכים הייחודיים של כל כלב ובעלים. כל התוכניות שלנו בבית הספר לאילוף כלבים מבוססות על שיטות תגמול חיובי, מדע עדכני ושנים של ניסיון מוכח. אנחנו מאמינים שכל כלב ראוי לחינוך איכותי המתאים לאישיותו ולקצב הלמידה שלו, תוך שמירה על רווחתו הנפשית והפיזית.</p></div></div></section><section class="services-detailed-section"><div class="container"><div class="service-detailed"><div class="service-detailed-image"><img data-placeholder="puppy-training-detailed" data-context="adorable puppies in group training class, playful learning environment" src="/assets/site-services-image-2.webp" alt="אילוף גורים"><div class="service-badge"><i class="fas fa-heart"></i><span>הכי פופולרי</span></div></div><div class="service-detailed-content"><div class="service-icon-large"><i class="fas fa-baby-carriage"></i></div><h2>אילוף גורים בישראל - תוכנית מקצועית לגילאי 2-6 חודשים</h2><p class="service-intro">אילוף גורים בישראל מתחיל בתקופה הקריטית ביותר בחיי הכלב שלכם - בין גיל 2 ל-6 חודשים. תוכנית מקיפה זו מניחה את היסודות להתנהגות מצוינת לכל החיים ומונעת בעיות עתידיות. הגורים לומדים בקצב שלהם, בסביבה חיובית ומעודדת, תוך התמקדות בסוציאליזציה נכונה, פקודות בסיסיות וחיזוק הקשר עם הבעלים. בית הספר לאילוף שלנו מתמחה בהבנת הצרכים הייחודיים של גורים ובבניית בסיס איתן להתנהגות עתידית.</p><div class="service-includes"><h3>התוכנית המקיפה שלנו כוללת:</h3><div class="includes-grid"><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>פקודות בסיס</strong><span>שב, בוא, שכב, המתן, עקוב</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>ניקיון בית</strong><span>שיטות מוכחות ללימוד ניקיון מהיר</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>סוציאליזציה</strong><span>חשיפה נכונה לכלבים, אנשים וסביבות</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>מניעת נשיכות</strong><span>למידת עוצמת נשיכה מתאימה</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>הליכה ברצועה</strong><span>הליכה נעימה ללא משיכות</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>ייעוץ תזונתי</strong><span>המלצות לתזונה נכונה לגורים</span></div></div></div></div><div class="service-details-box"><div class="detail-item"><i class="fas fa-clock"></i><div><strong>משך הקורס</strong><span>8 מפגשים שבועיים</span></div></div><div class="detail-item"><i class="fas fa-users"></i><div><strong>סוג השיעור</strong><span>קבוצתי (מקסימום 6 גורים)</span></div></div><div class="detail-item"><i class="fas fa-hourglass-half"></i><div><strong>משך מפגש</strong><span>60 דקות</span></div></div><div class="detail-item"><i class="fas fa-tag"></i><div><strong>מחיר</strong><span>החל מ-1,800₪</span></div></div></div><a href="/contact" class="btn btn-primary">הירשם לקורס<i class="fas fa-arrow-left"></i></a></div></div><div class="service-detailed reverse"><div class="service-detailed-image"><img data-placeholder="behavior-correction-detailed" data-context="calm dog with trainer working on behavior modification in peaceful setting" src="/assets/site-services-image-3.webp" alt="תיקון התנהגות"></div><div class="service-detailed-content"><div class="service-icon-large"><i class="fas fa-brain"></i></div><h2>תיקון התנהגות כלבים - פתרונות מקצועיים</h2><p class="service-intro">כל כלב יכול ללמוד התנהגות טובה יותר, ללא קשר לגיל או עבר. אנחנו מתמחים בפתרון בעיות התנהגות מורכבות כמו נביחות מופרזות, תוקפנות, חרדת נטישה והרס בבית באמצעות הבנה עמוקה של פסיכולוגיה כלבית ושיטות מוכחות. בית ספר לאילוף כלבים שלנו מציע גישה מקצועית ואמפתית לכל אתגר התנהגותי, תוך עבודה צמודה עם הבעלים להבנת שורש הבעיה ויישום פתרונות ארוכי טווח.</p><div class="service-includes"><h3>בית הספר לאילוף שלנו מטפל ב:</h3><div class="includes-grid"><div class="include-item"><i class="fas fa-volume-up"></i><div><strong>נביחות מוגזמות</strong><span>הפחתת נביחות מטרידות</span></div></div><div class="include-item"><i class="fas fa-exclamation-triangle"></i><div><strong>חרדת פרידה</strong><span>בניית ביטחון עצמי והרגעה</span></div></div><div class="include-item"><i class="fas fa-bolt"></i><div><strong>תוקפנות</strong><span>כלפי כלבים, אנשים או במצבים ספציפיים</span></div></div><div class="include-item"><i class="fas fa-running"></i><div><strong>קפיצות על אנשים</strong><span>למידת דרכי קבלת פנים מנומסות</span></div></div><div class="include-item"><i class="fas fa-utensils"></i><div><strong>הגנת משאבים</strong><span>שיתוף אוכל וצעצועים</span></div></div><div class="include-item"><i class="fas fa-door-open"></i><div><strong>בריחות</strong><span>בניית מוטיבציה להישאר עם הבעלים</span></div></div></div></div><div class="process-steps"><h3>תהליך העבודה:</h3><div class="steps-timeline"><div class="step"><div class="step-number">1</div><div class="step-content"><strong>פגישת אבחון</strong><span>מפגש ראשוני מעמיק להבנת הבעיה</span></div></div><div class="step"><div class="step-number">2</div><div class="step-content"><strong>בניית תוכנית</strong><span>תוכנית מותאמת אישית לכלב שלכם</span></div></div><div class="step"><div class="step-number">3</div><div class="step-content"><strong>יישום ותרגול</strong><span>מפגשים קבועים עם תרגילים לבית</span></div></div><div class="step"><div class="step-number">4</div><div class="step-content"><strong>מעקב ותמיכה</strong><span>ליווי מתמשך עד להשגת התוצאות</span></div></div></div></div><div class="service-details-box"><div class="detail-item"><i class="fas fa-calendar-check"></i><div><strong>משך הטיפול</strong><span>משתנה לפי הבעיה (6-12 שבועות)</span></div></div><div class="detail-item"><i class="fas fa-user"></i><div><strong>סוג השיעור</strong><span>פרטי / בבית הלקוח</span></div></div><div class="detail-item"><i class="fas fa-headset"></i><div><strong>תמיכה</strong><span>זמינות טלפונית בין מפגשים</span></div></div><div class="detail-item"><i class="fas fa-tag"></i><div><strong>מחיר</strong><span>החל מ-2,500₪</span></div></div></div><a href="/contact" class="btn btn-primary">קבע פגישת אבחון<i class="fas fa-arrow-left"></i></a></div></div><div class="service-detailed"><div class="service-detailed-image"><img data-placeholder="basic-obedience-detailed" data-context="dog responding to commands in outdoor training session" src="/assets/site-services-image-4.webp" alt="ציות בסיסי"></div><div class="service-detailed-content"><div class="service-icon-large"><i class="fas fa-dog"></i></div><h2>ציות בסיסי (6+ חודשים)</h2><p class="service-intro">הקורס המושלם לכלבים בוגרים שלא עברו אילוף בגיל צעיר, או לבעלים שרוצים לרענן ולחזק את הפקודות הבסיסיות. לעולם לא מאוחר מדי ללמוד! בית הספר לאילוף שלנו מתאים את שיטות ההוראה לכלבים בוגרים, תוך התחשבות בהיסטוריה שלהם ובדפוסי ההתנהגות הקיימים. התוכנית כוללת פקודות יסוד, שליטה ברצועה, ריכוז ותשומת לב, והכנה לחיים יומיומיים מאוזנים ומסודרים.</p><div class="service-includes"><h3>מה נלמד:</h3><div class="includes-grid"><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>7 פקודות בסיס</strong><span>שב, שכב, בוא, המתן, עקוב, עזוב, מקום</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>קריאת שפת גוף</strong><span>הבנת מה הכלב מנסה לתקשר</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>תקשורת יעילה</strong><span>איך לתקשר ברור עם הכלב</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>הליכה תרבותית</strong><span>הליכה רגועה ברצועה רופפת</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>התמודדות עם הסחות</strong><span>ציות גם בנוכחות כלבים ומגרים אחרים</span></div></div><div class="include-item"><i class="fas fa-check-circle"></i><div><strong>משחקים חינוכיים</strong><span>למידה דרך משחק וכיף</span></div></div></div></div><div class="service-details-box"><div class="detail-item"><i class="fas fa-clock"></i><div><strong>משך הקורס</strong><span>10 מפגשים שבועיים</span></div></div><div class="detail-item"><i class="fas fa-users"></i><div><strong>סוג השיעור</strong><span>קבוצתי או פרטי</span></div></div><div class="detail-item"><i class="fas fa-hourglass-half"></i><div><strong>משך מפגש</strong><span>60 דקות</span></div></div><div class="detail-item"><i class="fas fa-tag"></i><div><strong>מחיר</strong><span>קבוצתי: 1,600₪ | פרטי: 2,800₪</span></div></div></div><a href="/contact" class="btn btn-primary">הצטרף לקורס<i class="fas fa-arrow-left"></i></a></div></div><div class="service-detailed reverse"><div class="service-detailed-image"><img data-placeholder="advanced-training-detailed" data-context="dog performing impressive tricks and agility course" src="/assets/site-services-image-5.webp" alt="אילוף מתקדם"></div><div class="service-detailed-content"><div class="service-icon-large"><i class="fas fa-trophy"></i></div><h2>אילוף מתקדם וספורט כלבני</h2><p class="service-intro">לכלבים שסיימו אילוף בסיסי ומחפשים אתגר חדש ומרתק. תוכנית האילוף המתקדם שלנו מתמקדת בפיתוח מיומנויות מתקדמות, חיזוק הקשר עם הכלב והכנה לתחרויות אילוף. זוהי הזדמנות מצוינת לערוץ אנרגיה, להעשרה מנטלית ולהעמקת הקשר בין הכלב לבעליו. בית ספר לאילוף כלבים PawsAcademy מציע אתגרים מגוונים הכוללים ציות מתקדם, עבודת ריח, זריזות ומיומנויות מיוחדות המותאמות ליכולות הכלב.</p><div class="service-includes"><h3>מסלולי התמחות:</h3><div class="includes-grid"><div class="include-item"><i class="fas fa-star"></i><div><strong>טריקים מרשימים</strong><span>סיבוב, נפילה, גלגול, גל ועוד</span></div></div><div class="include-item"><i class="fas fa-running"></i><div><strong>אג'יליטי</strong><span>מסלול מכשולים מאתגר</span></div></div><div class="include-item"><i class="fas fa-search"></i><div><strong>עבודת ריח</strong><span>חיפוש חפצים ואנשים</span></div></div><div class="include-item"><i class="fas fa-hand-paper"></i><div><strong>ריקוד עם כלבים</strong><span>כוריאוגרפיה מרהיבה</span></div></div><div class="include-item"><i class="fas fa-shield-alt"></i><div><strong>הכנה לתחרויות</strong><span>אימון לתחרויות ציות ואג'יליטי</span></div></div><div class="include-item"><i class="fas fa-brain"></i><div><strong>העשרה קוגניטיבית</strong><span>פאזלים ומשימות חשיבה</span></div></div></div></div><div class="service-details-box"><div class="detail-item"><i class="fas fa-graduation-cap"></i><div><strong>דרישות קבלה</strong><span>סיום קורס ציות בסיסי</span></div></div><div class="detail-item"><i class="fas fa-calendar-alt"></i><div><strong>מבנה הקורס</strong><span>12 מפגשים + 3 מפגשי בונוס</span></div></div><div class="detail-item"><i class="fas fa-medal"></i><div><strong>תעודה</strong><span>תעודת הסמכה בסיום מוצלח</span></div></div><div class="detail-item"><i class="fas fa-tag"></i><div><strong>מחיר</strong><span>החל מ-2,200₪</span></div></div></div><a href="/contact" class="btn btn-primary">התחל את המסע<i class="fas fa-arrow-left"></i></a></div></div><div class="service-detailed"><div class="service-detailed-image"><img data-placeholder="private-training-detailed" data-context="one-on-one personalized dog training session at client home" src="/assets/site-services-image-6.webp" alt="אילוף פרטי"></div><div class="service-detailed-content"><div class="service-icon-large"><i class="fas fa-home"></i></div><h2>אילוף פרטי בבית</h2><p class="service-intro">השירות האישי והמותאם ביותר שלנו מביא את בית הספר לאילוף אליכם הביתה. המאלף המקצועי מגיע אליכם ועובד עם הכלב בסביבתו הטבעית, מה שמאפשר טיפול ממוקד בבעיות ספציפיות. אילוף פרטי אידיאלי לכלבים עם בעיות התנהגות מורכבות, לבעלים עם לוחות זמנים צפופים או העדפה לפרטיות מלאה. התוכנית מותאמת אישית לצרכים שלכם ומאפשרת התקדמות מהירה יותר בזכות תשומת הלב המלאה של המאלף.</p><div class="service-includes"><h3>יתרונות האילוף הפרטי:</h3><div class="includes-grid"><div class="include-item"><i class="fas fa-crosshairs"></i><div><strong>התאמה מלאה</strong><span>תוכנית מדויקת לצרכים שלכם</span></div></div><div class="include-item"><i class="fas fa-home"></i><div><strong>בסביבה הטבעית</strong><span>עבודה על בעיות במקום שהן קורות</span></div></div><div class="include-item"><i class="fas fa-clock"></i><div><strong>גמישות בזמנים</strong><span>תיאום לפי הלוח שלכם</span></div></div><div class="include-item"><i class="fas fa-user-friends"></i><div><strong>תשומת לב מלאה</strong><span>מאלף אחד לכלב אחד</span></div></div><div class="include-item"><i class="fas fa-tachometer-alt"></i><div><strong>קצב אישי</strong><span>התקדמות לפי קצב הכלב</span></div></div><div class="include-item"><i class="fas fa-users"></i><div><strong>מעורבות המשפחה</strong><span>כל בני המשפחה יכולים להשתתף</span></div></div></div></div><div class="private-training-options"><h3>חבילות אילוף:</h3><div class="options-grid"><div class="option-card"><div class="option-header"><h4>חבילת בסיס</h4><div class="option-price">1,800₪</div></div><ul><li><i class="fas fa-check"></i>5 מפגשים</li><li>מפגשי אילוף של 60 דקות מלאות</li><li>תוכנית אילוף מותאמת אישית לכלב שלכם</li><li>תמיכה מקצועית בווטסאפ לאורך כל התהליך</li></ul></div><div class="option-card featured"><div class="option-badge">הכי פופולרי</div><div class="option-header"><h4>חבילת פרימיום</h4><div class="option-price">3,200₪</div></div><ul><li><i class="fas fa-check"></i>10 מפגשים</li><li>מפגשי אילוף של 60 דקות מלאות</li><li>תוכנית אילוף מקיפה המבוססת על שיטות מוכחות</li><li><i class="fas fa-check"></i>תמיכה 24/7</li><li><i class="fas fa-check"></i>2 מפגשי מעקב חינם</li></ul></div><div class="option-card"><div class="option-header"><h4>חבילת אינטנסיב</h4><div class="option-price">5,800₪</div></div><ul><li><i class="fas fa-check"></i>20 מפגשים</li><li><i class="fas fa-check"></i>90 דקות כל מפגש</li><li><i class="fas fa-check"></i>ליווי מלא</li><li><i class="fas fa-check"></i>תמיכה VIP</li><li><i class="fas fa-check"></i>ערכת אילוף מתנה</li></ul></div></div></div><a href="/contact" class="btn btn-primary">קבע מפגש ראשון<i class="fas fa-arrow-left"></i></a></div></div></div></section><section class="why-choose-section"><div class="container"><div class="section-header-center"><span class="section-label">למה לבחור בנו</span><h2>מה עושה אותנו <span class="highlight-text">שונים</span></h2></div><div class="why-grid"><div class="why-card"><div class="why-icon"><i class="fas fa-certificate"></i></div><h3>מאלפים מוסמכים</h3><p>כל המאלפים בבית הספר לאילוף שלנו בעלי הסמכה בינלאומית מוכרת ועוברים הכשרות מתמשכות בשיטות האילוף המתקדמות ביותר. אנחנו משקיעים בהשתלמויות מקצועיות, עדכונים במחקרים האחרונים בתחום התנהגות כלבים, ולומדים מהמומחים המובילים בעולם. המקצועיות שלנו מבטיחה שהכלב שלכם מקבל את הטיפול והחינוך הטובים ביותר האפשריים, תוך שמירה על סטנדרטים גבוהים של רווחה ואתיקה.</p></div><div class="why-card"><div class="why-icon"><i class="fas fa-heart"></i></div><h3>גישה חיובית בלבד</h3><p>אנחנו מתחייבים לאילוף ללא כפייה, כאב או פחד - רק תגמול, חיזוק חיובי ואהבה אמיתית לכלבים. בית ספר לאילוף כלבים PawsAcademy מאמין שאילוף אפקטיבי מבוסס על אמון, כבוד והבנה הדדית. השיטות שלנו מדעיות, הומניות ומוכחות כיעילות ביותר ליצירת שינוי התנהגותי לטווח ארוך. אנחנו גאים בגישה האתית שלנו ובתוצאות המרשימות שהיא מביאה עבור אלפי כלבים ובעליהם ברחבי ישראל.</p></div><div class="why-card"><div class="why-icon"><i class="fas fa-chart-line"></i></div><h3>תוצאות מוכחות</h3><p>98% שביעות רצון לקוחות ומאות סיפורי הצלחה</p></div><div class="why-card"><div class="why-icon"><i class="fas fa-sync"></i></div><h3>מעקב מתמשך</h3><p>לא משאירים אתכם לבד - ליווי וייעוץ גם אחרי סיום הקורס</p></div></div></div></section><section class="cta-section"><div class="container"><div class="cta-content"><div class="cta-text"><h2>מעוניינים להתחיל?</h2><p>בואו לפגישת ייעוץ חינמית וללא התחייבות. נכיר את הכלב שלכם ונמליץ על התוכנית המתאימה ביותר</p></div><div class="cta-actions"><a href="/contact" class="btn btn-white-large"><span>קבע פגישת ייעוץ חינם</span><i class="fas fa-arrow-left"></i></a></div></div></div></section></main><footer class="footer"><div class="container"><div class="footer-main"><div class="footer-brand"><img data-placeholder="footer-logo" data-context="pawsacademy logo white version" src="/assets/site-services-image-7.webp" alt="PawsAcademy"><p>המקום שבו כל כלב הופך לחבר הטוב ביותר שלך</p><div class="social-links"><a href="https://facebook.com/[facebook_handle]" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/[instagram_handle]" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/[whatsapp_handle]" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-links"><div class="footer-column"><h4>קישורים מהירים</h4><ul><li><a href="/services">שירותים</a></li><li><a href="/about">אודות</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-column"><h4>צור קשר</h4><ul><li><i class="fas fa-envelope"></i><a href="mailto:[business_email]">[business_email]</a></li><li><i class="fas fa-phone"></i><a href="tel:[business_phone]">[business_phone]</a></li><li><i class="fas fa-map-marker-alt"></i><span>[business_address]</span></li></ul></div><div class="footer-column"><h4>שעות פעילות</h4><ul><li>ראשון - חמישי: 8:00-20:00</li><li>שישי: 8:00-14:00</li><li>שבת: סגור</li></ul></div></div></div><div class="footer-bottom"><div class="footer-legal"><a href="/privacy">מדיניות פרטיות</a><a href="/accessibility">הצהרת נגישות</a><a href="/terms">תנאי שימוש</a></div><div class="footer-credit"><p>© 2024 PawsAcademy. כל הזכויות שמורות | נוצר על ידי <a href="https://zappy5.com" target="_blank">Zappy</a></p></div></div></div></footer><a href="https://wa.me/[business_phone]" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<script>
+
+// Navbar Mobile Menu Toggle and Contrast Fix
+(function() {
+  // Use 'load' event instead of 'DOMContentLoaded' to ensure we run AFTER all other scripts
+  window.addEventListener('load', function() {
+    
+    // FIX MOBILE BUTTON CONTRAST
+    // Detect navbar background color and apply contrasting color to mobile buttons
+    const navbar = document.querySelector('.navbar, nav, header');
+    if (!navbar) {
+      console.log('[Navbar] Navbar element not found');
+      return;
+    }
+    
+    const computedStyle = window.getComputedStyle(navbar);
+    let bgColor = computedStyle.backgroundColor;
+    
+    console.log('[Navbar] Initial navbar background:', bgColor);
+    
+    // Check if background is transparent or rgba with 0 alpha
+    const isTransparent = bgColor === 'transparent' || 
+                         bgColor === 'rgba(0, 0, 0, 0)' ||
+                         (bgColor.startsWith('rgba') && bgColor.includes(', 0)'));
+    
+    if (isTransparent) {
+      // Check for background-image or gradient
+      const bgImage = computedStyle.backgroundImage;
+      if (bgImage && bgImage !== 'none') {
+        console.log('[Navbar] Navbar has background image/gradient, using dark text');
+        bgColor = 'rgb(240, 240, 240)'; // Assume light background
+      } else {
+        // Transparent navbar - check body background
+        const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+        console.log('[Navbar] Navbar transparent, using body background:', bodyBg);
+        bgColor = bodyBg;
+      }
+    }
+    
+    // Calculate luminance to determine if background is light or dark
+    const rgb = bgColor.match(/\d+/g);
+    if (rgb && rgb.length >= 3) {
+      const r = parseInt(rgb[0]);
+      const g = parseInt(rgb[1]);
+      const b = parseInt(rgb[2]);
+      const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+      
+      // Don't apply color overrides - let Claude's CSS handle all colors
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      const phoneBtn = document.querySelector('.phone-header-btn');
+      
+      console.log('[Navbar] Mobile buttons found - colors from Claude\'s CSS:', { 
+        bgColor, 
+        luminance: luminance.toFixed(2),
+        buttons: { mobileToggle: !!mobileToggle, phoneBtn: !!phoneBtn }
+      });
+      
+      // FIX ICON SIZES - Ensure SVGs are properly sized and visible
+      // INJECT CRITICAL CSS TO OVERRIDE ANY CONFLICTING RULES
+      const criticalCSS = document.createElement('style');
+      criticalCSS.id = 'zappy-mobile-nav-fix';
+      const htmlLang = document.documentElement.lang || 'en';
+      const isRTL = htmlLang === 'he' || htmlLang === 'ar';
+      
+      criticalCSS.textContent = `
+        /* Hide mobile buttons on desktop, show only on mobile */
+        @media (min-width: 769px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            display: none !important;
+          }
+        }
+        
+        /* Show and position mobile buttons correctly on mobile */
+        @media (max-width: 768px) {
+          .mobile-toggle,
+          .phone-header-btn {
+            position: absolute !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            z-index: 1001 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 50% !important;
+            /* Background and colors from Claude's CSS - don't override */
+            border: none !important;
+            cursor: pointer !important;
+            padding: 8px !important;
+          }
+          
+          .mobile-toggle {
+            ${isRTL ? 'right: 20px !important; left: auto !important;' : 'left: 20px !important; right: auto !important;'}
+          }
+          
+          .phone-header-btn {
+            ${isRTL ? 'left: 20px !important; right: auto !important;' : 'right: 20px !important; left: auto !important;'}
+          }
+          
+          /* Ensure SVG icons are properly sized - colors from Claude's CSS */
+          .mobile-toggle svg,
+          .phone-header-btn svg {
+            width: 24px !important;
+            height: 24px !important;
+            /* Don't force display - let JavaScript control hamburger/close toggle */
+          }
+          
+          /* SVG path colors from Claude's CSS - don't override */
+        }
+      `;
+      
+      // Remove existing fix if present and inject new one
+      const existing = document.getElementById('zappy-mobile-nav-fix');
+      if (existing) existing.remove();
+      document.head.appendChild(criticalCSS);
+      
+      console.log('[Navbar] Critical CSS injected for mobile nav positioning');
+      
+      if (mobileToggle) {
+        // Also set inline styles as backup
+        mobileToggle.style.setProperty('position', 'absolute', 'important');
+        mobileToggle.style.setProperty('top', '50%', 'important');
+        mobileToggle.style.setProperty('transform', 'translateY(-50%)', 'important');
+        mobileToggle.style.setProperty('z-index', '1001', 'important');
+        
+        if (isRTL) {
+          mobileToggle.style.setProperty('right', '20px', 'important');
+          mobileToggle.style.setProperty('left', 'auto', 'important');
+        } else {
+          mobileToggle.style.setProperty('left', '20px', 'important');
+          mobileToggle.style.setProperty('right', 'auto', 'important');
+        }
+        
+        const hamburgerIcon = mobileToggle.querySelector('.hamburger-icon');
+        const closeIcon = mobileToggle.querySelector('.close-icon');
+        
+        if (hamburgerIcon) {
+          hamburgerIcon.style.setProperty('width', '24px', 'important');
+          hamburgerIcon.style.setProperty('height', '24px', 'important');
+          hamburgerIcon.style.setProperty('display', 'block', 'important'); // Show hamburger by default
+          console.log('[Navbar] Hamburger icon sized and shown');
+        }
+        if (closeIcon) {
+          closeIcon.style.setProperty('width', '24px', 'important');
+          closeIcon.style.setProperty('height', '24px', 'important');
+          closeIcon.style.setProperty('display', 'none', 'important'); // Hide close icon by default
+          console.log('[Navbar] Close icon sized and hidden');
+        }
+        
+        console.log('[Navbar] Mobile toggle positioned:', {
+          lang: htmlLang,
+          position: htmlLang === 'he' || htmlLang === 'ar' ? 'right: 20px' : 'left: 20px'
+        });
+      }
+      
+      if (phoneBtn) {
+        // Also set inline styles as backup
+        phoneBtn.style.setProperty('position', 'absolute', 'important');
+        phoneBtn.style.setProperty('top', '50%', 'important');
+        phoneBtn.style.setProperty('transform', 'translateY(-50%)', 'important');
+        phoneBtn.style.setProperty('z-index', '1001', 'important');
+        
+        if (isRTL) {
+          phoneBtn.style.setProperty('left', '20px', 'important');
+          phoneBtn.style.setProperty('right', 'auto', 'important');
+        } else {
+          phoneBtn.style.setProperty('right', '20px', 'important');
+          phoneBtn.style.setProperty('left', 'auto', 'important');
+        }
+        
+        const phoneIcon = phoneBtn.querySelector('svg');
+        if (phoneIcon) {
+          phoneIcon.style.width = '24px';
+          phoneIcon.style.height = '24px';
+          phoneIcon.setAttribute('width', '24');
+          phoneIcon.setAttribute('height', '24');
+          console.log('[Navbar] Phone icon sized to 24x24');
+        }
+        
+        console.log('[Navbar] Phone button positioned:', {
+          lang: htmlLang,
+          position: htmlLang === 'he' || htmlLang === 'ar' ? 'left: 20px' : 'right: 20px'
+        });
+      }
+    } else {
+      console.log('[Navbar] Could not parse background color:', bgColor);
+    }
+    
+    // MOBILE MENU TOGGLE
+   
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (!mobileToggle || !navMenu) {
+      console.log('[Navbar] Mobile toggle or menu not found');
+      return;
+    }
+    
+    console.log('[Navbar] Initializing mobile menu...');
+    
+    // Remove any existing event listeners by cloning the button
+    const newToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newToggle, mobileToggle);
+    
+    // Toggle menu on button click - use newToggle now
+    newToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const hamburgerIcon = this.querySelector('.hamburger-icon');
+      const closeIcon = this.querySelector('.close-icon');
+      const isActive = navMenu.classList.contains('active');
+      
+      if (isActive) {
+        // Close menu
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed');
+      } else {
+        // Open menu
+        navMenu.classList.add('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'none', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'block', 'important');
+        document.body.style.overflow = 'hidden';
+        console.log('[Navbar] Menu opened');
+      }
+    });
+    
+    // Close menu when clicking nav links
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        const hamburgerIcon = newToggle.querySelector('.hamburger-icon');
+        const closeIcon = newToggle.querySelector('.close-icon');
+        
+        navMenu.classList.remove('active');
+        if (hamburgerIcon) hamburgerIcon.style.setProperty('display', 'block', 'important');
+        if (closeIcon) closeIcon.style.setProperty('display', 'none', 'important');
+        document.body.style.overflow = '';
+        console.log('[Navbar] Menu closed (link clicked)');
+      });
+    });
+    
+    // Phone button functionality
+    const phoneBtn = document.querySelector('.phone-header-btn');
+    if (phoneBtn) {
+      phoneBtn.addEventListener('click', function() {
+        // Get phone number from placeholder in page or use default
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        const phoneNumber = phoneLinks.length > 0 
+          ? phoneLinks[0].getAttribute('href').replace('tel:', '')
+          : '[business_phone]';
+        
+        window.location.href = 'tel:' + phoneNumber;
+        console.log('[Navbar] Phone button clicked');
+      });
+    }
+    
+    console.log('[Navbar] Mobile menu initialized successfully');
+    
+    // === WHATSAPP BUTTON VISIBILITY FIX ===
+    // Ensure WhatsApp floating button is hidden on desktop and visible on mobile
+    const handleWhatsAppVisibility = function() {
+      const whatsappBtn = document.querySelector('.whatsapp-float, a[href*="wa.me"]');
+      if (whatsappBtn) {
+        const isDesktop = window.innerWidth >= 769;
+        if (isDesktop) {
+          whatsappBtn.style.setProperty('display', 'none', 'important');
+          whatsappBtn.style.setProperty('visibility', 'hidden', 'important');
+          whatsappBtn.style.setProperty('opacity', '0', 'important');
+          whatsappBtn.style.setProperty('pointer-events', 'none', 'important');
+          console.log('[WhatsApp] Button hidden on desktop');
+        } else {
+          whatsappBtn.style.removeProperty('display');
+          whatsappBtn.style.removeProperty('visibility');
+          whatsappBtn.style.removeProperty('opacity');
+          whatsappBtn.style.removeProperty('pointer-events');
+          console.log('[WhatsApp] Button visible on mobile');
+        }
+      }
+    };
+    
+    // Run on load
+    handleWhatsAppVisibility();
+    
+    // Run on resize with debouncing
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(handleWhatsAppVisibility, 100);
+    });
+  });
+})();
+
+</script>
+
+<!-- Zappy Attribution Header Script -->
+<script>
+(function() {
+  var websiteId = '66f2a0a1-61e4-4da6-9f4d-c33a4783b82c';
+  
+  // Don't show header in preview mode
+  var currentUrl = window.location.href;
+  var isPreview = currentUrl.includes('/preview/') || 
+                  currentUrl.includes('/preview-fullscreen/') || 
+                  currentUrl.includes('localhost:5001') ||
+                  currentUrl.includes('localhost:3000');
+  
+  if (isPreview) {
+    return; // Exit early in preview mode
+  }
+  
+  fetch('http://localhost:5001/api/website/' + websiteId + '/tier')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.showAttribution) {
+        var header = document.getElementById('zappy-attribution-header');
+        if (header) {
+          // Use dynamic announcement content if available
+          if (data.announcement && data.announcement.html) {
+            header.innerHTML = data.announcement.html;
+          }
+          // Apply fixed positioning styles inline (works for existing sites too)
+          header.style.cssText = 'position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important; display: flex !important; justify-content: center !important; align-items: center !important; text-align: center !important; box-sizing: border-box !important;';
+          // Fix child elements that might have position: fixed from old CSS
+          var children = header.querySelectorAll('*');
+          for (var i = 0; i < children.length; i++) {
+            children[i].style.position = 'static';
+          }
+          // Get header height
+          var headerHeight = header.offsetHeight;
+          // Find and fix navbar to be fixed as well (prevents gap at top of page)
+          var navSelectors = ['nav', '.navbar', '.nav'];
+          var navbar = null;
+          for (var j = 0; j < navSelectors.length; j++) {
+            navbar = document.querySelector(navSelectors[j]);
+            if (navbar && navbar.id !== 'zappy-attribution-header') break;
+            navbar = null;
+          }
+          if (navbar) {
+            var navbarHeight = navbar.offsetHeight;
+            navbar.style.cssText += '; position: fixed !important; top: ' + headerHeight + 'px !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99998 !important;';
+            document.body.style.paddingTop = (headerHeight + navbarHeight) + 'px';
+          } else {
+            document.body.style.paddingTop = headerHeight + 'px';
+          }
+        }
+      }
+    })
+    .catch(function(error) {
+      console.error('Failed to check tier:', error);
+    });
+})();
+</script>
+    <div data-integration="accessibility:toolbar"></div>
+
+    <script id="zappy-mobile-submenu-script">
+    (function() {
+      function initMobileSubmenuToggles() {
+        if (window.innerWidth > 768) {
+          document.querySelectorAll('.mobile-submenu-toggle').forEach(function(btn) { btn.remove(); });
+          document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) { menu.classList.remove('mobile-expanded'); });
+          return;
+        }
+        var items = document.querySelectorAll('.nav-menu li:has(.sub-menu), nav li:has(.sub-menu), .navbar li:has(.sub-menu), #navMenu li:has(.sub-menu)');
+        items.forEach(function(li) {
+          if (li.querySelector('.mobile-submenu-toggle')) return;
+          var submenu = li.querySelector('.sub-menu');
+          var parentLink = li.querySelector(':scope > a');
+          if (!submenu || !parentLink) return;
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'mobile-submenu-toggle';
+          toggleBtn.setAttribute('aria-label', 'Toggle submenu');
+          toggleBtn.setAttribute('type', 'button');
+          parentLink.insertAdjacentElement('afterend', toggleBtn);
+          toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault(); e.stopPropagation();
+            document.querySelectorAll('.sub-menu.mobile-expanded').forEach(function(menu) {
+              if (menu !== submenu) { menu.classList.remove('mobile-expanded'); var t = menu.parentElement.querySelector('.mobile-submenu-toggle'); if(t) t.classList.remove('expanded'); }
+            });
+            submenu.classList.toggle('mobile-expanded');
+            toggleBtn.classList.toggle('expanded');
+          });
+        });
+      }
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initMobileSubmenuToggles); }
+      else { initMobileSubmenuToggles(); }
+      var resizeTimer; window.addEventListener('resize', function() { clearTimeout(resizeTimer); resizeTimer = setTimeout(initMobileSubmenuToggles, 250); });
+    })();
+    </script>
+    <script src="/script.js"></script>
+</body></html>
